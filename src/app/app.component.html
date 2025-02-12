@@ -1,50 +1,27 @@
 <!-- HEADER SECTION -->
 <!-- HEADER SECTION -->
 <!-- HEADER SECTION -->
-<header id="top" class="bg-[#F8F8FF] text-black font-[Inter] pt-4 sticky top-0 z-50">
-  <nav>
-    <div class="container mx-auto flex justify-between items-center py-4">
-        <div class="text-2xl font-bold font-[Poppins]">
-          <a href="">
-            <img src="/assets/images/logo.png" alt="Logo" class="h-20 w-20">
-          </a>
-        </div>
-        <div class="flex-1 flex justify-center space-x-10 font-[Poppins]">
-            <a href="#top" class="nav-link text-black hover:text-[#b01030]">Home</a>
-            <a href="#about" class="nav-link text-black hover:text-[#b01030]">About</a>
-            <a href="#projects" class="nav-link text-black hover:text-[#b01030]">Projects</a>
-        </div>
-        <div class="flex items-center">
-          <a href="#contact" class="bg-[#b01030] text-white py-4 px-4 rounded hover:bg-[#313332] font-[Poppins]">Contact Me</a>
-        </div>
-    </div>
-  </nav>  
-</header>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', function() {
-      let current = '';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('text-[#b01030]');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('text-[#b01030]');
-        }
-      });
-    });
-  });
-</script>
+  <header id="top" class="bg-[#F8F8FF] text-black font-[Inter] pt-4 sticky top-0 z-50 ">
+    <nav>
+      <div class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-20">
+          <div class="text-2xl font-bold font-[Poppins]">
+            <a href="#top">
+              <img src="/assets/images/logo.png" alt="Logo" class="h-16 w-16 object-contain">
+            </a>
+          </div>
+          <div class="hidden md:flex space-x-10 font-[Poppins]">
+              <a href="#home" class="nav-link text-black hover:text-[#b01030] transition-all">Home</a>
+              <a href="#projects" class="nav-link text-black hover:text-[#b01030] transition-all">Projects</a>
+              <a href="#about" class="nav-link text-black hover:text-[#b01030] transition-all">About</a>
+          </div>
+          <div class="flex items-center">
+            <a href="#contact" class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300">
+              Contact Me
+            </a>
+          </div>
+      </div>
+    </nav>  
+  </header>
 <!-- HEADER SECTION -->
 <!-- HEADER SECTION -->
 <!-- HEADER SECTION -->
@@ -57,12 +34,9 @@
 
 <!-- HOME -->
 <!-- HOME -->
-  <!-- HOME -->
-  <!-- INTRODUCTION -->
-  <!-- INTRODUCTION -->
-  <!-- INTRODUCTION -->
-  <section class="bg-[#F8F8FF] text-black min-h-screen flex items-center py-12">
-    <div class="container mx-auto flex flex-col md:flex-row items-center px-8 lg:px-20 pb-36">
+<!-- HOME -->
+  <section id="home" class="bg-[#F8F8FF] text-black min-h-screen flex items-center py-12">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-8 lg:px-20">
       <div class="w-full md:w-1/2 text-center md:text-left">
         <p class="text-xl text-gray-600 tracking-wide">Hello World! 👋🏽 </p>
         <h1 class="text-6xl font-[Poppins] font-bold leading-tight mt-2">
@@ -75,41 +49,47 @@
           Innovative and results-driven Web Developer dedicated to crafting dynamic, user-centric digital experiences. Passionate about mastering full-stack development and leveraging cutting-edge technologies to build seamless, high-performance solutions.
         </p>
         <div class="flex space-x-6 mt-8 justify-center md:justify-start">   
-        <a href="/assets/files/resume.pdf" class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm shadow-lg hover:bg-[#313332] transition-all duration-300" download="YourNextDeveloper_MarcelAngeloNavarro_DevResume.pdf">
-          Download My Resume
-        </a>
+          <a href="/assets/files/resume.pdf" class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm shadow-lg hover:bg-[#313332] transition-all duration-300" download="Marcel_Angelo_Resume.pdf">
+            Download My Resume
+          </a>
+        </div>
       </div>
+      <div class="w-full md:w-1/2 mt-12 md:mt-0 flex justify-end">
+        <img src="/assets/images/headshot.png" alt="Marcel Angelo" class="w-80 h-auto lg:w-96 lg:h-96 max-w-full object-cover">
       </div>
-  <div class="w-full md:w-1/2 mt-12 md:mt-0 flex justify-end">
-    <img src="/assets/images/headshot.png" alt="John Doe" 
-        class="w-80 h-auto lg:w-96 lg:h-96 max-w-full object-cover ">
-  </div>
     </div>
   </section>
-  <!-- INTRODUCTION -->
-  <!-- INTRODUCTION -->
-  <!-- INTRODUCTION -->
+<!-- HOME -->
+<!-- HOME -->
+<!-- HOME -->
 
 
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
 
-  <!-- PROJECTS / WORKS -->
-  <!-- PROJECTS / WORKS -->
-  <!-- PROJECTS / WORKS -->
-  <section id="projects" class="relative bg-[#F8F8FF] text-black pb-24 pt-0">
-    <div class="container mx-auto px-8 lg:px-20 relative z-10">
+
+<!-- PROJECTS / WORKS -->
+<!-- PROJECTS / WORKS -->
+<!-- PROJECTS / WORKS -->
+  <section id="projects" class="relative bg-[#F8F8FF] text-black py-24">
+    <div class="container mx-auto px-8 lg:px-20">
       <div class="text-center mb-16">
-        <h2 class="text-5xl font-[Poppins] font-bold relative inline-block pb-3 border-b-4 border-[#b01030]">
+        <h2 class="text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]">
           PROJECTS / WORKS
         </h2>
       </div>
       <div class="grid md:grid-cols-2 gap-12">
-        
-        <!-- PROJECT 1 -->
         <div class="group relative bg-[#F8F8FF] shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl">
           <div class="relative">
-            <img src="/assets/images/project1.png" alt="The Nebula Group"
-                class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+            <div class="relative w-full overflow-hidden">
+              <div class="carousel flex w-full transition-transform duration-500">
+                <img src="/assets/images/project1-1.png" alt="The Nebula Group" class="w-full h-72 object-cover">
+                <img src="/assets/images/project1-2.png" alt="The Nebula Group" class="w-full h-72 object-cover">
+                <img src="/assets/images/project1-3.png" alt="The Nebula Group" class="w-full h-72 object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center space-y-4">
               <a href="https://www.thenebulagroup.net/" target="_blank" 
                 class="text-white text-lg font-semibold bg-[#b01030] px-6 py-3 rounded-lg hover:bg-[#313332] transition-all duration-300 shadow-lg">
                 View Project
@@ -119,16 +99,23 @@
           <div class="p-8">
             <h3 class="text-3xl font-[Poppins] font-semibold">The Nebula Group</h3>
             <p class="text-gray-600 mt-4 leading-relaxed">
-              A retro-futuristic real estate platform designed for seamless navigation, insightful resources, and an engaging user experience for homebuyers, sellers, and agents.
+              A retro-futuristic real estate platform designed for seamless navigation, insightful resources, and an engaging user experience.
+            </p>
+            <p class="text-gray-600 mt-4">
+              <span class="font-semibold text-[#b01030]">Tech Stack:</span> Angular, TypeScript, Firebase, Tailwind CSS
             </p>
           </div>
         </div>
-        <!-- PROJECT 2 -->
-        <div class="group relative bg-[F8F8FF] shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl">
+        <div class="group relative bg-[#F8F8FF] shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl">
           <div class="relative">
-            <img src="/assets/images/project2.png" alt="Your Culinary Passport"
-                class="w-full h-72 object-cover transition-all duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+            <div class="relative w-full overflow-hidden">
+              <div class="carousel flex w-full transition-transform duration-500">
+                <img src="/assets/images/project2-1.png" alt="Your Culinary Passport" class="w-full h-72 object-cover">
+                <img src="/assets/images/project2-2.png" alt="Your Culinary Passport" class="w-full h-72 object-cover">
+                <img src="/assets/images/project2-3.png" alt="Your Culinary Passport" class="w-full h-72 object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center space-y-4">
               <a href="https://www.yourculinarypassport.com/" target="_blank" 
                 class="text-white text-lg font-semibold bg-[#b01030] px-6 py-3 rounded-lg hover:bg-[#313332] transition-all duration-300 shadow-lg">
                 View Project
@@ -138,27 +125,24 @@
           <div class="p-8">
             <h3 class="text-3xl font-[Poppins] font-semibold">Your Culinary Passport</h3>
             <p class="text-gray-600 mt-4 leading-relaxed">
-              A food and recipe platform that takes users on a global culinary journey. Featuring diverse recipes, stunning visuals, and seamless navigation for an immersive experience.
+              A food and recipe platform that takes users on a global culinary journey with stunning visuals and seamless navigation.
+            </p>
+            <p class="text-gray-600 mt-4">
+              <span class="font-semibold text-[#b01030]">Tech Stack:</span> Vue.js, Node.js, MongoDB, Tailwind CSS
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="absolute top-0 left-0 w-40 h-40 bg-[#b01030] opacity-10 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-16 right-16 w-28 h-28 bg-[#313332] opacity-10 rounded-full blur-3xl animate-pulse"></div>
   </section>
-  <!-- PROJECTS / WORKS -->
-  <!-- PROJECTS / WORKS -->
-  <!-- PROJECTS / WORKS -->
-<!-- HOME -->
-<!-- HOME -->
-<!-- HOME -->
+<!-- PROJECTS / WORKS -->
+<!-- PROJECTS / WORKS -->
+<!-- PROJECTS / WORKS -->
 
 
 <!-- ==================================================================================================================================================================== -->
 <!-- ==================================================================================================================================================================== -->
 <!-- ==================================================================================================================================================================== -->
-
 
 
 <!-- ABOUT -->
@@ -167,68 +151,51 @@
   <!-- PERSONAL BIO -->
   <!-- PERSONAL BIO -->
   <!-- PERSONAL BIO -->
-  <section id="personal-bio" class="relative bg-[#F8F8FF] text-black py-24">
-      <div class="container mx-auto px-8 lg:px-20 relative z-10">
-          
-          <!-- Bio Content -->
-          <div class="grid md:grid-cols-2 gap-16 items-center">
-              
-              <!-- Left: Profile Image & Floating Details -->
-              <div class="relative flex justify-start">
-                  <div class="relative group">
-                      <!-- Profile Image -->
-                      <img src="/assets/images/bio.jpg" alt="Marcel Angelo"
-                              class="w-80 h-80 object-cover rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105">
-
-                      <!-- Floating Badge 1 -->
-                      <div class="absolute top-0 left-0 bg-[#b01030] text-white text-sm px-5 py-3 rounded-full shadow-lg transform -translate-x-6 -translate-y-6 transition-all duration-500 group-hover:-translate-x-8 group-hover:-translate-y-8">
-                          Full-Stack Developer 🚀
-                      </div>
-
-                      <!-- Floating Badge 2 -->
-                      <div class="absolute bottom-0 right-0 bg-[#313332] text-white text-sm px-5 py-3 rounded-full shadow-lg transform translate-x-6 translate-y-6 transition-all duration-500 group-hover:translate-x-8 group-hover:translate-y-8">
-                          Tech Enthusiast 🔥 
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Right: Bio & CTA -->
-              <div class="text-center md:text-left">
-                  <h3 class="text-5xl font-[Poppins] font-semibold mb-6 leading-tight">
-                      Hi, I'm <span class="text-[#b01030]">Marcel</span> 👋🏽
-                  </h3>
-                  <p class="text-gray-600 text-lg leading-relaxed">
-                      I'm a passionate <strong class="font-semibold">Full-Stack Developer</strong> with a deep love for crafting immersive web experiences. 
-                      With <strong class="font-semibold">3 years</strong> in the industry, I specialize in 
-                      <strong class="text-[#b01030] font-semibold">building high-performance, scalable applications</strong> that bridge the gap between 
-                      <strong>technology and user experience</strong>.
-                  </p>
-
-                  <p class="text-gray-600 mt-6 text-lg leading-relaxed">
-                      Beyond coding, you'll find me <em class="italic">exploring emerging tech</em>, contributing to <em class="italic">open-source projects</em>, 
-                      and occasionally diving into <em class="italic">UI/UX design</em>.
-                  </p>
-
-                  <!-- CTA Buttons -->
-                  <div class="mt-8 flex justify-center md:justify-start space-x-6">
-                      <a href="/projects"
-                          class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-lg shadow-lg hover:bg-[#313332] hover:scale-105 transition-all duration-300">
-                          View My Work
-                      </a>
-                      <a href="/contact"
-                          class="border-2 border-[#b01030] text-[#b01030] px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-lg shadow-lg hover:bg-[#b01030] hover:text-white hover:scale-105 transition-all duration-300">
-                          Get in Touch
-                      </a>
-                  </div>
-              </div>
-
-          </div>
-      </div>
-
-      <!-- Subtle Background Accents -->
-      <div class="absolute top-10 left-10 w-40 h-40 bg-[#b01030] opacity-10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-16 right-16 w-32 h-32 bg-[#313332] opacity-10 rounded-full blur-3xl animate-pulse"></div>
-  </section>
+    <section id="personal-bio" class="relative bg-[#F8F8FF] text-black py-24">
+        <div class="container mx-auto px-8 lg:px-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative flex justify-start">
+                    <div class="relative group">
+                        <img src="/assets/images/bio.jpg" alt="Marcel Angelo"
+                                class="w-80 h-80 object-cover rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105">
+                        <div class="absolute top-0 left-0 bg-[#b01030] text-white text-sm px-5 py-3 rounded-full shadow-lg transform -translate-x-6 -translate-y-6 transition-all duration-500 group-hover:-translate-x-8 group-hover:-translate-y-8">
+                            Full-Stack Developer 🚀
+                        </div>
+                        <div class="absolute bottom-0 right-0 bg-[#313332] text-white text-sm px-5 py-3 rounded-full shadow-lg transform translate-x-6 translate-y-6 transition-all duration-500 group-hover:translate-x-8 group-hover:translate-y-8">
+                            Tech Enthusiast 🔥 
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-[Poppins] font-semibold mb-6 leading-tight">
+                        Hi, I'm <span class="text-[#b01030]">Marcel</span> 👋🏽
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        I'm a passionate <strong class="font-semibold">Full-Stack Developer</strong> with a deep love for crafting immersive web experiences. 
+                        With <strong class="font-semibold">3 years</strong> in the industry, I specialize in 
+                        <strong class="text-[#b01030] font-semibold">building high-performance, scalable applications</strong> that bridge the gap between 
+                        <strong>technology and user experience</strong>.
+                    </p>
+                    <p class="text-gray-600 mt-6 text-lg leading-relaxed">
+                        Beyond coding, you'll find me <em class="italic">exploring emerging tech</em>, contributing to <em class="italic">open-source projects</em>, 
+                        and occasionally diving into <em class="italic">UI/UX design</em>.
+                    </p>
+                    <div class="mt-8 flex justify-center md:justify-start space-x-6">
+                        <a href="/projects"
+                            class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-lg shadow-lg hover:bg-[#313332] hover:scale-105 transition-all duration-300">
+                            View My Work
+                        </a>
+                        <a href="/contact"
+                            class="border-2 border-[#b01030] text-[#b01030] px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-lg shadow-lg hover:bg-[#b01030] hover:text-white hover:scale-105 transition-all duration-300">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-10 left-10 w-40 h-40 bg-[#b01030] opacity-10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-16 right-16 w-32 h-32 bg-[#313332] opacity-10 rounded-full blur-3xl animate-pulse"></div>
+    </section>
   <!-- PERSONAL BIO -->
   <!-- PERSONAL BIO -->
   <!-- PERSONAL BIO -->
@@ -239,161 +206,129 @@
   <!-- MY TECH -->
   <!-- MY TECH -->
   <!-- TECH STACK SECTION -->
-  <section id="tech-stack" class="bg-[#F8F8FF] text-black py-24">
-    <div class="container mx-auto px-8 lg:px-20">
-      
-      <!-- Section Title -->
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-[Poppins] font-bold relative inline-block pb-3 border-b-4 border-[#b01030]">
-          TECHNOLOGIES
-        </h2>
-        <p class="text-gray-600 mt-4 text-lg">
-          Tools and technologies I use to build world-class web applications.
-        </p>
-      </div>
-
-      <!-- Tech Stack Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 text-center">
-
-        <!-- JavaScript -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
-              alt="JavaScript" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">JavaScript</p>
+    <section id="tech-stack" class="bg-[#F8F8FF] text-black py-24">
+      <div class="container mx-auto px-8 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-[Poppins] font-bold relative inline-block pb-3 border-b-4 border-[#b01030]">
+            TECHNOLOGIES
+          </h2>
         </div>
-
-        <!-- TypeScript -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" 
-              alt="TypeScript" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">TypeScript</p>
-        </div>
-
-        <!-- Angular -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" 
-              alt="Angular" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">Angular</p>
-        </div>
-
-        <!-- Node.js -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
-              alt="Node.js" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">Node.js</p>
-        </div>
-
-        <!-- MongoDB -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" 
-              alt="MongoDB" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">MongoDB</p>
-        </div>
-
-        <!-- HTML5 -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
-              alt="HTML5" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">HTML5</p>
-        </div>
-
-        <!-- CSS3 -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
-              alt="CSS3" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">CSS3</p>
-        </div>
-
-        <!-- Tailwind CSS -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" 
-              alt="Tailwind CSS" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">Tailwind CSS</p>
-        </div>
-
-        <!-- SASS / SCSS -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" 
-              alt="SASS / SCSS" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">SASS / SCSS</p>
-        </div>
-
-        <!-- Bootstrap -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
-              alt="Bootstrap" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">Bootstrap</p>
-        </div>
-
-        <!-- Firebase -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" 
-              alt="Firebase" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">Firebase</p>
-        </div>
-
-        <!-- MySQL -->
-        <div class="group">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
-              alt="MySQL" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
-          <p class="text-gray-700 mt-3">MySQL</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 text-center">
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+                alt="JavaScript" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">JavaScript</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" 
+                alt="TypeScript" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">TypeScript</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" 
+                alt="Angular" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">Angular</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+                alt="Node.js" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">Node.js</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" 
+                alt="MongoDB" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">MongoDB</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+                alt="HTML5" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">HTML5</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+                alt="CSS3" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">CSS3</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" 
+                alt="Tailwind CSS" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">Tailwind CSS</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" 
+                alt="SASS / SCSS" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">SASS / SCSS</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
+                alt="Bootstrap" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">Bootstrap</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" 
+                alt="Firebase" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">Firebase</p>
+          </div>
+          <div class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
+                alt="MySQL" class="w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+            <p class="text-gray-700 mt-3">MySQL</p>
+          </div>
         </div>
       </div>
+    </section>
+  <!-- MY TECH -->
+  <!-- MY TECH -->
+  <!-- MY TECH -->
+  
 
+
+
+
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+  
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+  <!-- CERTIFICATIONS & QUALIFICATIONS -->
+<!-- ABOUT -->
+<!-- ABOUT -->
+<!-- ABOUT -->
+
+
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
+
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<!-- CONTACT -->
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<!-- CONTACT -->
+
+
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
+<!-- ==================================================================================================================================================================== -->
+
+
+<!-- FOOTER SECTION -->
+<!-- FOOTER SECTION -->
+<!-- FOOTER SECTION -->
+  <footer class="bg-[#F8F8FF] text-black font-[Inter] py-12 mt-auto">
+    <div class="container mx-auto flex flex-col items-center text-center">
+      <a href="#top" class="transition-transform duration-300 hover:scale-105">
+        <img src="/assets/images/logo.png" alt="Logo" class="h-20 w-20 object-contain">
+      </a>
+      <p class="text-sm text-gray-400 mt-6 tracking-wider uppercase font-[Poppins]">
+        &copy; 2025 MARCELANGELO.DEV | All Rights Reserved.
+      </p>
     </div>
-  </section>
-
-  <!-- MY TECH -->
-  <!-- MY TECH -->
-  <!-- MY TECH -->
-  
-
-
-
-
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-  
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-  <!-- CERTIFICATIONS & QUALIFICATIONS -->
-<!-- ABOUT -->
-<!-- ABOUT -->
-<!-- ABOUT -->
-
-
-<!-- ==================================================================================================================================================================== -->
-<!-- ==================================================================================================================================================================== -->
-<!-- ==================================================================================================================================================================== -->
-
-
-<!-- CONTACT -->
-<!-- CONTACT -->
-<!-- CONTACT -->
-<!-- CONTACT -->
-<!-- CONTACT -->
-<!-- CONTACT -->
-
-
-<!-- ==================================================================================================================================================================== -->
-<!-- ==================================================================================================================================================================== -->
-<!-- ==================================================================================================================================================================== -->
-
-
-<!-- FOOTER SECTION -->
-<!-- FOOTER SECTION -->
-<!-- FOOTER SECTION -->
-<footer class="bg-[#F8F8FF] text-black font-[Inter] py-16 mt-auto">
-  <div class="container mx-auto flex flex-col items-center text-center">
-    <a href="#" class="transition-transform duration-300 hover:scale-105">
-      <img src="/assets/images/logo.png" alt="Logo" class="h-24 w-24 object-contain">
-    </a>
-    <p class="text-sm text-gray-400 mt-6 tracking-wider uppercase font-[Poppins]">
-      &copy; 2025 MARCELANGELO.DEV  |  All Rights Reserved.
-    </p>
-  </div>
-</footer>
+  </footer>
 <!-- FOOTER SECTION -->
 <!-- FOOTER SECTION -->
 <!-- FOOTER SECTION -->
