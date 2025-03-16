@@ -1,10 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-// import { HomeComponent } from './portfolio/home/home.component';
-// import { AboutComponent } from './portfolio/about/about.component';
-// import { ContactComponent } from './portfolio/contact/contact.component';
-// import { ProjectsComponent } from './portfolio/projects/projects.component';
-
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -29,6 +24,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, myDevPortfolio');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, myDevPortfolio',
+    );
   });
 });

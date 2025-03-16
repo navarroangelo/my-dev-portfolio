@@ -1,193 +1,324 @@
 <!-- HEADER -->
 <!-- HEADER -->
 <!-- HEADER -->
-  <header id="top" class="bg-[#F8F8FF] text-black font-[Inter] pt-4 top-0 z-50 w-full shadow-md">
-    <nav>
-      <div class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-20">
-  
-        <!-- Logo -->
-        <div class="text-2xl font-bold font-[Poppins]">
-          <a href="#top">
-            <img src="/assets/images/logo.png" alt="Logo" class="h-12 w-12 sm:h-16 sm:w-16 object-contain">
-          </a>
-        </div>
-  
-        <!-- Mobile Menu Button -->
-        <button id="menu-toggle" class="md:hidden text-black focus:outline-none">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-  
-        <!-- Navigation Menu -->
-        <div id="menu"
-          class="hidden md:flex md:items-center md:space-x-6 lg:space-x-10 font-[Poppins] absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-[#F8F8FF] md:bg-transparent md:transform-none md:flex-row text-center md:text-left shadow-lg md:shadow-none transition-all">
-          <a href="#home"
-            class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0">Home</a>
-          <a href="#portfolio"
-            class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0">Portfolio</a>
-          <a href="#about"
-            class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0">About</a>
-          <a href="#technologies"
-            class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0">Technologies</a>
-          <a href="#credentials"
-            class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0">Credentials</a>
-        </div>
-  
-        <!-- Contact Button -->
-        <div class="hidden md:block">
-          <a href="#contact"
-            class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300">
-            Contact Me
-          </a>
-        </div>
+<header
+  id="top"
+  class="bg-[#F8F8FF] text-black font-[Inter] pt-4 top-0 z-50 w-full shadow-md"
+>
+  <nav>
+    <div
+      class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-20"
+    >
+      <!-- Logo -->
+      <div class="text-2xl font-bold font-[Poppins]">
+        <a href="#top">
+          <img
+            src="/assets/images/logo.png"
+            alt="Logo"
+            class="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+          />
+        </a>
       </div>
-  
-      <!-- Mobile Menu Dropdown -->
-      <div id="mobile-menu" class="hidden flex flex-col items-center bg-[#F8F8FF] md:hidden w-full shadow-lg">
-        <a href="#home" class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center">Home</a>
-        <a href="#portfolio" class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center">Portfolio</a>
-        <a href="#about" class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center">About</a>
-        <a href="#technologies"
-          class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center">Technologies</a>
-        <a href="#credentials"
-          class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center">Credentials</a>
-        <a href="#contact"
-          class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300 my-3">
+
+      <!-- Mobile Menu Button -->
+      <button
+        (click)="toggleMenu()"
+        class="md:hidden text-black focus:outline-none"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Navigation Menu -->
+      <div
+        [class.hidden]="!menuOpen"
+        class="md:flex md:items-center md:space-x-6 lg:space-x-10 font-[Poppins] absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-[#F8F8FF] md:bg-transparent md:transform-none md:flex-row text-center md:text-left shadow-lg md:shadow-none transition-all"
+      >
+        <a
+          href="#home"
+          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          >Home</a
+        >
+        <a
+          href="#portfolio"
+          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          >Portfolio</a
+        >
+        <a
+          href="#about"
+          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          >About</a
+        >
+        <a
+          href="#technologies"
+          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          >Technologies</a
+        >
+        <a
+          href="#credentials"
+          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          >Credentials</a
+        >
+      </div>
+
+      <!-- Contact Button -->
+      <div class="hidden md:block">
+        <a
+          href="#contact"
+          class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300"
+        >
           Contact Me
         </a>
       </div>
-  
-    </nav>
-  </header>
-<!-- HEADER -->
-<!-- HEADER -->
-<!-- HEADER -->
-
-
-
-
-
-<!-- HOME -->
-<!-- HOME -->
-<!-- HOME -->
-  <section id="home" class="bg-[#F8F8FF] text-black min-h-[90vh] flex items-center">
-    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 sm:px-12 lg:px-20">
-
-      <!-- Text Content -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <p class="text-lg sm:text-xl text-gray-600 tracking-wide">Hello World! 👋🏽 </p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-[Poppins] font-bold leading-tight mt-2">
-          Marcel Angelo Navarro
-        </h1>
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-[Poppins] font-semibold text-[#b01030] mt-3">
-          Full-Stack Developer | UI/UX Designer
-        </h2>
-        <p class="text-base sm:text-lg text-gray-600 mt-4 leading-relaxed">
-          Innovative and results-driven Web Developer dedicated to crafting dynamic, user-centric digital experiences.
-          Passionate about mastering full-stack development and leveraging cutting-edge technologies to build seamless,
-          high-performance solutions.
-        </p>
-
-        <!-- Call to Action Button -->
-        <div class="flex space-x-6 mt-8 justify-center md:justify-start">
-          <a href="/assets/files/resume.pdf"
-            class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm sm:text-base shadow-lg hover:bg-[#313332] transition-all duration-300"
-            download="YourNextDev_MarcelAngeloNavarro.pdf">
-            Download My Resume
-          </a>
-        </div>
-      </div>
-
-      <!-- Profile Image -->
-      <div class="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
-        <img src="/assets/images/headshot.png" alt="Marcel Angelo"
-          class="w-64 sm:w-72 md:w-80 lg:w-96 max-w-full object-cover">
-      </div>
-
     </div>
-  </section>
+
+    <!-- Mobile Menu Dropdown -->
+    <div
+      id="mobile-menu"
+      class="hidden flex flex-col items-center bg-[#F8F8FF] md:hidden w-full shadow-lg"
+    >
+      <a
+        href="#home"
+        class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center"
+        >Home</a
+      >
+      <a
+        href="#portfolio"
+        class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center"
+        >Portfolio</a
+      >
+      <a
+        href="#about"
+        class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center"
+        >About</a
+      >
+      <a
+        href="#technologies"
+        class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center"
+        >Technologies</a
+      >
+      <a
+        href="#credentials"
+        class="text-black hover:text-[#b01030] transition-all py-3 w-full text-center"
+        >Credentials</a
+      >
+      <a
+        href="#contact"
+        class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300 my-3"
+      >
+        Contact Me
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- HEADER -->
+<!-- HEADER -->
+<!-- HEADER -->
+
 <!-- HOME -->
 <!-- HOME -->
 <!-- HOME -->
+<section
+  id="home"
+  class="bg-[#F8F8FF] text-black min-h-[90vh] flex items-center"
+>
+  <div
+    class="container mx-auto flex flex-col md:flex-row items-center px-6 sm:px-12 lg:px-20"
+  >
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <p class="text-lg sm:text-xl text-gray-600 tracking-wide">
+        Hello World! 👋🏽
+      </p>
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-[Poppins] font-bold leading-tight mt-2"
+      >
+        Marcel Angelo Navarro
+      </h1>
+      <h2
+        class="text-lg sm:text-xl lg:text-2xl font-[Poppins] font-semibold text-[#b01030] mt-3"
+      >
+        Full-Stack Developer | UI/UX Designer
+      </h2>
+      <p class="text-base sm:text-lg text-gray-600 mt-4 leading-relaxed">
+        Innovative and results-driven Web Developer dedicated to crafting
+        dynamic, user-centric digital experiences. Passionate about mastering
+        full-stack development and leveraging cutting-edge technologies to build
+        seamless, high-performance solutions.
+      </p>
 
+      <!-- Call to Action Button -->
+      <div class="flex space-x-6 mt-8 justify-center md:justify-start">
+        <a
+          href="/assets/files/resume.pdf"
+          class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm sm:text-base shadow-lg hover:bg-[#313332] transition-all duration-300"
+          download="YourNextDev_MarcelAngeloNavarro.pdf"
+        >
+          Download My Resume
+        </a>
+      </div>
+    </div>
 
-
-
+    <!-- Profile Image -->
+    <div
+      class="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end"
+    >
+      <img
+        src="/assets/images/headshot.png"
+        alt="Marcel Angelo"
+        class="w-64 sm:w-72 md:w-80 lg:w-96 max-w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
+<!-- HOME -->
+<!-- HOME -->
+<!-- HOME -->
 
 <!-- PORTFOLIO -->
 <!-- PORTFOLIO -->
 <!-- PORTFOLIO -->
 <section id="portfolio" class="relative bg-[#F8F8FF] text-black py-16 sm:py-24">
   <div class="container mx-auto px-6 sm:px-12 lg:px-20">
-
     <!-- Section Title -->
     <div class="text-center mb-12 sm:mb-16">
       <h2
-        class="text-4xl sm:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]">
+        class="text-4xl sm:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]"
+      >
         Portfolio
       </h2>
       <p class="text-gray-600 mt-4 text-base sm:text-lg">
-        A Showcase of My Professional, Academic, and Personal Development Projects
+        A Showcase of My Professional, Academic, and Personal Development
+        Projects
       </p>
     </div>
 
     <!-- Works Section -->
     <div class="mb-24 sm:mb-36">
-      <h3 class="text-3xl sm:text-4xl font-[Poppins] font-semibold text-center uppercase mb-10 sm:mb-12 text-[#b01030]">
+      <h3
+        class="text-3xl sm:text-4xl font-[Poppins] font-semibold text-center uppercase mb-10 sm:mb-12 text-[#b01030]"
+      >
         Works
       </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
         <!-- Project Cards -->
         <div
-          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-4"
+        >
           <div class="relative">
-            <img src="/assets/images/work1.png" alt="The Nebula Group"
-              class="w-full h-64 sm:h-72 object-cover transition-all duration-500 group-hover:scale-110">
+            <img
+              src="/assets/images/work1.png"
+              alt="The Nebula Group"
+              class="w-full h-52 sm:h-58 object-cover transition-all duration-500 group-hover:scale-110"
+            />
           </div>
-          <div class="p-6 sm:p-8 text-center">
-            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">The Nebula Group</h4>
-            <p class="text-gray-600 mt-4 sm:mt-6 mb-6 sm:mb-10 leading-relaxed">
-              A retro-futuristic real estate platform designed for seamless navigation and insightful resources.
+          <div class="p-4 sm:p-6 text-center">
+            <h4 class="text-xl sm:text-2xl font-[Poppins] font-semibold">
+              The Nebula Group
+            </h4>
+            <p class="text-gray-600 mt-3 sm:mt-4 mb-4 sm:mb-6 leading-relaxed">
+              A real estate platform designed for seamless navigation and
+              insightful resources.
             </p>
-            <a href="https://www.thenebulagroup.net/" target="_blank"
-              class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm sm:text-lg shadow-lg hover:bg-[#313332] transition-all duration-300">
+            <a
+              href="https://www.thenebulagroup.net/"
+              target="_blank"
+              class="bg-[#b01030] text-white px-5 py-2 rounded-lg font-[Poppins] uppercase tracking-wide text-xs sm:text-sm shadow-lg hover:bg-[#313332] transition-all duration-300"
+            >
               View Website
             </a>
           </div>
         </div>
 
         <div
-          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-4"
+        >
           <div class="relative">
-            <img src="/assets/images/work2.png" alt="Your Culinary Passport"
-              class="w-full h-64 sm:h-72 object-cover transition-all duration-500 group-hover:scale-110">
+            <img
+              src="/assets/images/work2.png"
+              alt="Your Culinary Passport"
+              class="w-full h-52 sm:h-58 object-cover transition-all duration-500 group-hover:scale-110"
+            />
           </div>
-          <div class="p-6 sm:p-8 text-center">
-            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">Culinary Passport</h4>
-            <p class="text-gray-600 mt-4 sm:mt-6 mb-6 sm:mb-10 leading-relaxed">
-              A food & recipe platform showcasing a global culinary journey with stunning visuals.
+          <div class="p-4 sm:p-6 text-center">
+            <h4 class="text-xl sm:text-2xl font-[Poppins] font-semibold">
+              Culinary Passport
+            </h4>
+            <p class="text-gray-600 mt-3 sm:mt-4 mb-4 sm:mb-6 leading-relaxed">
+              A food & recipe platform showcasing a global culinary journey with
+              stunning visuals.
             </p>
-            <a href="https://www.yourculinarypassport.com/" target="_blank"
-              class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm sm:text-lg shadow-lg hover:bg-[#313332] transition-all duration-300">
+            <a
+              href="https://www.yourculinarypassport.com/"
+              target="_blank"
+              class="bg-[#b01030] text-white px-5 py-2 rounded-lg font-[Poppins] uppercase tracking-wide text-xs sm:text-sm shadow-lg hover:bg-[#313332] transition-all duration-300"
+            >
               View Website
             </a>
           </div>
         </div>
 
         <div
-          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-4"
+        >
           <div class="relative">
-            <img src="/assets/images/work3.png" alt="Amor Fatii"
-              class="w-full h-64 sm:h-72 object-cover transition-all duration-500 group-hover:scale-110">
+            <img
+              src="/assets/images/work3.png"
+              alt="Amor Fatii"
+              class="w-full h-52 sm:h-58 object-cover transition-all duration-500 group-hover:scale-110"
+            />
           </div>
-          <div class="p-6 sm:p-8 text-center">
-            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">Amor Fatii</h4>
-            <p class="text-gray-600 mt-4 sm:mt-6 mb-6 sm:mb-10 leading-relaxed">
-              A high-fashion brand with an elegant digital storefront & seamless shopping experience.
+          <div class="p-4 sm:p-6 text-center">
+            <h4 class="text-xl sm:text-2xl font-[Poppins] font-semibold">
+              Amor Fatii
+            </h4>
+            <p class="text-gray-600 mt-3 sm:mt-4 mb-4 sm:mb-6 leading-relaxed">
+              A high-fashion brand that offers a seamless shopping experience.
             </p>
-            <a href="https://amorfatii.net/" target="_blank"
-              class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] uppercase tracking-wide text-sm sm:text-lg shadow-lg hover:bg-[#313332] transition-all duration-300">
+            <a
+              href="https://amorfatii.net/"
+              target="_blank"
+              class="bg-[#b01030] text-white px-5 py-2 rounded-lg font-[Poppins] uppercase tracking-wide text-xs sm:text-sm shadow-lg hover:bg-[#313332] transition-all duration-300"
+            >
+              View Website
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="group relative bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-4"
+        >
+          <div class="relative">
+            <img
+              src="/assets/images/work4.png"
+              alt="ULTRA MRF"
+              class="w-full h-52 sm:h-58 object-cover transition-all duration-500 group-hover:scale-110"
+            />
+          </div>
+          <div class="p-4 sm:p-6 text-center">
+            <h4 class="text-xl sm:text-2xl font-[Poppins] font-semibold">
+              ULTRA MRF
+            </h4>
+            <p class="text-gray-600 mt-3 sm:mt-4 mb-4 sm:mb-6 leading-relaxed">
+              A mags and tires and services autoshop with a modern digital
+              storefront.
+            </p>
+            <a
+              href="https://ultramrf.shop/"
+              target="_blank"
+              class="bg-[#b01030] text-white px-5 py-2 rounded-lg font-[Poppins] uppercase tracking-wide text-xs sm:text-sm shadow-lg hover:bg-[#313332] transition-all duration-300"
+            >
               View Website
             </a>
           </div>
@@ -197,92 +328,148 @@
 
     <!-- Projects Section -->
     <div>
-      <h3 class="text-3xl sm:text-4xl font-[Poppins] font-semibold text-center uppercase mb-10 sm:mb-12 text-[#b01030]">
+      <h3
+        class="text-3xl sm:text-4xl font-[Poppins] font-semibold text-center uppercase mb-10 sm:mb-12 text-[#b01030]"
+      >
         Projects
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-
         <!-- Project Card -->
         <div
-          class="group bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          class="group bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-6"
+        >
           <div>
-            <img src="/assets/images/bwgolf.png" alt="BWGolf" class="w-full h-64 sm:h-72 object-cover">
+            <img
+              src="/assets/images/bwgolf.png"
+              alt="BWGolf"
+              class="w-full h-64 sm:h-72 object-cover"
+            />
           </div>
           <div class="p-6 sm:p-8">
-            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">BWGolf</h4>
+            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">
+              BWGolf
+            </h4>
             <p class="text-gray-600 mt-4 leading-relaxed">
-              An Angular web app demonstrating data binding, directives, and routing.
+              An Angular web app demonstrating data binding, directives, and
+              routing.
             </p>
-<div class="flex flex-wrap items-center gap-4 mt-6">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-7 h-7">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-7 h-7">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"
-    class="w-7 h-7">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"
-    class="w-7 h-7">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"
-    class="w-7 h-7">
-</div>
+            <div class="flex flex-wrap items-center gap-4 mt-6">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS3"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                alt="Angular"
+                class="w-7 h-7"
+              />
+            </div>
             <div class="flex space-x-4 mt-6">
-              <a href="https://bwgolf.netlify.app" target="_blank"
-                class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] shadow-lg hover:bg-[#313332] transition-all duration-300">
+              <a
+                href="https://bwgolf.netlify.app"
+                target="_blank"
+                class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] shadow-lg hover:bg-[#313332] transition-all duration-300"
+              >
                 View Demo
               </a>
-                            <a href="https://github.com/navarroangelo/bwgolf" target="_blank"
-                              class="text-[#b01030] flex items-center space-x-2 hover:text-[#313332] transition-all duration-300">
-                              <i class="fab fa-github text-2xl"></i>
-                              <span>GitHub</span>
-                            </a>
+              <a
+                href="https://github.com/navarroangelo/bwgolf"
+                target="_blank"
+                class="text-[#b01030] flex items-center space-x-2 hover:text-[#313332] transition-all duration-300"
+              >
+                <i class="fab fa-github text-2xl"></i>
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
         </div>
 
         <div
-          class="group bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+          class="group bg-white shadow-lg rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl pb-6"
+        >
           <div>
-            <img src="/assets/images/cbe.png" alt="Cakes By Estela" class="w-full h-64 sm:h-72 object-cover">
+            <img
+              src="/assets/images/cbe.png"
+              alt="Cakes By Estela"
+              class="w-full h-64 sm:h-72 object-cover"
+            />
           </div>
           <div class="p-6 sm:p-8">
-            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">Cakes By Estela</h4>
+            <h4 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">
+              Cakes By Estela
+            </h4>
             <p class="text-gray-600 mt-4 leading-relaxed">
               A cake shop website with backend integrations and API connections.
             </p>
             <div class="flex flex-wrap items-center gap-4 mt-6">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-7 h-7">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-7 h-7">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"
-                class="w-7 h-7">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"
-                class="w-7 h-7">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
-                class="w-7 h-7">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS3"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                alt="Bootstrap"
+                class="w-7 h-7"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js"
+                class="w-7 h-7"
+              />
             </div>
             <div class="flex space-x-4 mt-6">
-              <a href="https://cakesbyestela.netlify.app/" target="_blank"
-                class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] shadow-lg hover:bg-[#313332] transition-all duration-300">
+              <a
+                href="https://cakesbyestela.netlify.app/"
+                target="_blank"
+                class="bg-[#b01030] text-white px-6 py-3 rounded-lg font-[Poppins] shadow-lg hover:bg-[#313332] transition-all duration-300"
+              >
                 View Demo
               </a>
-                            <a href="https://github.com/navarroangelo/bwgolf" target="_blank"
-                              class="text-[#b01030] flex items-center space-x-2 hover:text-[#313332] transition-all duration-300">
-                              <i class="fab fa-github text-2xl"></i>
-                              <span>GitHub</span>
-                            </a>
+              <a
+                href="https://github.com/navarroangelo/webpub-cakesbyestela"
+                target="_blank"
+                class="text-[#b01030] flex items-center space-x-2 hover:text-[#313332] transition-all duration-300"
+              >
+                <i class="fab fa-github text-2xl"></i>
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 <!-- PORTFOLIO -->
 <!-- PORTFOLIO -->
 <!-- PORTFOLIO -->
-
-
-
-
 
 <!-- ABOUT -->
 <!-- ABOUT -->
@@ -290,18 +477,22 @@
 <section id="about" class="relative bg-[#F8F8FF] text-black py-16 sm:py-24">
   <div class="container mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 items-center">
-
       <!-- Image Section -->
       <div class="relative flex justify-center md:justify-start">
         <div class="relative group">
-          <img src="/assets/images/bio.jpg" alt="Marcel Angelo"
-            class="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105">
+          <img
+            src="/assets/images/bio.jpg"
+            alt="Marcel Angelo"
+            class="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105"
+          />
           <div
-            class="absolute top-0 left-0 bg-[#b01030] text-white text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-3 rounded-full shadow-lg transform -translate-x-4 sm:-translate-x-6 -translate-y-4 sm:-translate-y-6 transition-all duration-500 group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:-translate-y-6 sm:group-hover:-translate-y-8">
+            class="absolute top-0 left-0 bg-[#b01030] text-white text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-3 rounded-full shadow-lg transform -translate-x-4 sm:-translate-x-6 -translate-y-4 sm:-translate-y-6 transition-all duration-500 group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:-translate-y-6 sm:group-hover:-translate-y-8"
+          >
             Full-Stack Developer 🚀
           </div>
           <div
-            class="absolute bottom-0 right-0 bg-[#313332] text-white text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-3 rounded-full shadow-lg transform translate-x-4 sm:translate-x-6 translate-y-4 sm:translate-y-6 transition-all duration-500 group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:translate-y-6 sm:group-hover:translate-y-8">
+            class="absolute bottom-0 right-0 bg-[#313332] text-white text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-3 rounded-full shadow-lg transform translate-x-4 sm:translate-x-6 translate-y-4 sm:translate-y-6 transition-all duration-500 group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:translate-y-6 sm:group-hover:translate-y-8"
+          >
             Tech Enthusiast 🔥
           </div>
         </div>
@@ -309,242 +500,340 @@
 
       <!-- Text Content -->
       <div class="text-center md:text-left">
-        <h3 class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-semibold mb-4 sm:mb-6 leading-tight">
+        <h3
+          class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-semibold mb-4 sm:mb-6 leading-tight"
+        >
           Hi, I'm <span class="text-[#b01030]">Marcel</span> 👋🏽
         </h3>
         <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
-          I'm a passionate <strong class="font-semibold">Full-Stack Developer</strong> with a deep love for crafting
-          immersive web experiences.
-          With <strong class="font-semibold">3 years</strong> in the industry, I specialize in
-          <strong class="text-[#b01030] font-semibold">building high-performance, scalable applications</strong> that
-          bridge the gap between
+          I'm a passionate
+          <strong class="font-semibold">Full-Stack Developer</strong> with a
+          deep love for crafting immersive web experiences. With
+          <strong class="font-semibold">3 years</strong> in the industry, I
+          specialize in
+          <strong class="text-[#b01030] font-semibold"
+            >building high-performance, scalable applications</strong
+          >
+          that bridge the gap between
           <strong>technology and user experience</strong>.
         </p>
-        <p class="text-gray-600 mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed">
-          Beyond coding, you'll find me <em class="italic">exploring emerging tech</em>, contributing to <em
-            class="italic">open-source projects</em>,
-          and occasionally diving into <em class="italic">UI/UX design</em>.
+        <p
+          class="text-gray-600 mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed"
+        >
+          Beyond coding, you'll find me
+          <em class="italic">exploring emerging tech</em>, contributing to
+          <em class="italic">open-source projects</em>, and occasionally diving
+          into <em class="italic">UI/UX design</em>.
         </p>
 
         <!-- Social Media Links -->
-        <div class="mt-6 sm:mt-8 flex justify-center md:justify-start space-x-6">
-          <a href="https://www.linkedin.com/in/marcelanghelo/" target="_blank"
-            class="hover:opacity-80 transition-all duration-300">
-            <svg class="w-7 sm:w-8 h-7 sm:h-8 fill-[#0077b5]" viewBox="0 0 24 24">
+        <div
+          class="mt-6 sm:mt-8 flex justify-center md:justify-start space-x-6"
+        >
+          <a
+            href="https://www.linkedin.com/in/marcelanghelo/"
+            target="_blank"
+            class="hover:opacity-80 transition-all duration-300"
+          >
+            <svg
+              class="w-7 sm:w-8 h-7 sm:h-8 fill-[#0077b5]"
+              viewBox="0 0 24 24"
+            >
               <path
-                d="M22.23 0H1.77C.8 0 0 .8 0 1.77v20.45C0 23.2.8 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.77V1.77C24 .8 23.2 0 22.23 0zM7.08 20.45H3.56V8.95h3.52v11.5zM5.32 7.43c-1.13 0-1.82-.75-1.82-1.68 0-.94.7-1.68 1.83-1.68 1.12 0 1.82.74 1.82 1.68 0 .94-.7 1.68-1.83 1.68zM20.45 20.45h-3.52v-5.6c0-1.35-.5-2.26-1.74-2.26-1.01 0-1.61.68-1.88 1.35-.1.24-.12.58-.12.92v5.58h-3.52s.05-9.03 0-9.95h3.52v1.41c.46-.71 1.27-1.72 3.08-1.72 2.25 0 3.94 1.46 3.94 4.6v5.65z" />
+                d="M22.23 0H1.77C.8 0 0 .8 0 1.77v20.45C0 23.2.8 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.77V1.77C24 .8 23.2 0 22.23 0zM7.08 20.45H3.56V8.95h3.52v11.5zM5.32 7.43c-1.13 0-1.82-.75-1.82-1.68 0-.94.7-1.68 1.83-1.68 1.12 0 1.82.74 1.82 1.68 0 .94-.7 1.68-1.83 1.68zM20.45 20.45h-3.52v-5.6c0-1.35-.5-2.26-1.74-2.26-1.01 0-1.61.68-1.88 1.35-.1.24-.12.58-.12.92v5.58h-3.52s.05-9.03 0-9.95h3.52v1.41c.46-.71 1.27-1.72 3.08-1.72 2.25 0 3.94 1.46 3.94 4.6v5.65z"
+              />
             </svg>
           </a>
-          <a href="https://github.com/navarroangelo" target="_blank"
-            class="hover:opacity-80 transition-all duration-300">
-            <svg class="w-7 sm:w-8 h-7 sm:h-8 fill-[#171515]" viewBox="0 0 24 24">
+          <a
+            href="https://github.com/navarroangelo"
+            target="_blank"
+            class="hover:opacity-80 transition-all duration-300"
+          >
+            <svg
+              class="w-7 sm:w-8 h-7 sm:h-8 fill-[#171515]"
+              viewBox="0 0 24 24"
+            >
               <path
-                d="M12 0C5.37 0 0 5.4 0 12.08c0 5.34 3.44 9.87 8.21 11.49.6.11.82-.26.82-.58v-2.12c-3.34.73-4.03-1.6-4.03-1.6-.54-1.41-1.32-1.79-1.32-1.79-1.08-.75.08-.73.08-.73 1.2.08 1.83 1.27 1.83 1.27 1.07 1.85 2.82 1.31 3.52 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.48-1.36-5.48-6.05 0-1.34.47-2.44 1.24-3.3-.12-.31-.54-1.54.12-3.2 0 0 1.01-.33 3.3 1.26A11.8 11.8 0 0112 6.2c1.02.01 2.05.14 3.02.41 2.28-1.6 3.29-1.26 3.29-1.26.67 1.66.25 2.89.12 3.2.77.86 1.23 1.96 1.23 3.3 0 4.7-2.81 5.75-5.49 6.04.43.38.81 1.13.81 2.28v3.38c0 .32.22.7.83.58A12.04 12.04 0 0024 12.08C24 5.4 18.63 0 12 0z" />
+                d="M12 0C5.37 0 0 5.4 0 12.08c0 5.34 3.44 9.87 8.21 11.49.6.11.82-.26.82-.58v-2.12c-3.34.73-4.03-1.6-4.03-1.6-.54-1.41-1.32-1.79-1.32-1.79-1.08-.75.08-.73.08-.73 1.2.08 1.83 1.27 1.83 1.27 1.07 1.85 2.82 1.31 3.52 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.48-1.36-5.48-6.05 0-1.34.47-2.44 1.24-3.3-.12-.31-.54-1.54.12-3.2 0 0 1.01-.33 3.3 1.26A11.8 11.8 0 0112 6.2c1.02.01 2.05.14 3.02.41 2.28-1.6 3.29-1.26 3.29-1.26.67 1.66.25 2.89.12 3.2.77.86 1.23 1.96 1.23 3.3 0 4.7-2.81 5.75-5.49 6.04.43.38.81 1.13.81 2.28v3.38c0 .32.22.7.83.58A12.04 12.04 0 0024 12.08C24 5.4 18.63 0 12 0z"
+              />
             </svg>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61567072834431" target="_blank"
-            class="hover:opacity-80 transition-all duration-300">
+          <a
+            href="https://www.facebook.com/profile.php?id=61567072834431"
+            target="_blank"
+            class="hover:opacity-80 transition-all duration-300"
+          >
             <svg class="w-8 h-8 fill-[#1877F2]" viewBox="0 0 24 24">
               <path
-                d="M22 12.08C22 6.5 17.5 2 12 2S2 6.5 2 12.08C2 17.1 5.84 21.2 10.67 22v-7h-3v-3h3v-2.3c0-3 1.7-4.5 4.3-4.5 1.24 0 2.53.23 2.53.23v2.75h-1.43c-1.4 0-1.83.86-1.83 1.74V12h3.1l-.5 3h-2.6v7C18.16 21.2 22 17.1 22 12.08z" />
+                d="M22 12.08C22 6.5 17.5 2 12 2S2 6.5 2 12.08C2 17.1 5.84 21.2 10.67 22v-7h-3v-3h3v-2.3c0-3 1.7-4.5 4.3-4.5 1.24 0 2.53.23 2.53.23v2.75h-1.43c-1.4 0-1.83.86-1.83 1.74V12h3.1l-.5 3h-2.6v7C18.16 21.2 22 17.1 22 12.08z"
+              />
             </svg>
           </a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 <!-- ABOUT -->
 <!-- ABOUT -->
 <!-- ABOUT -->
-
-
-
-
 
 <!-- MY TECH -->
 <!-- MY TECH -->
 <!-- MY TECH -->
 <section id="technologies" class="bg-[#F8F8FF] text-black py-16 sm:py-24">
   <div class="container mx-auto px-6 sm:px-12 lg:px-20">
-
     <!-- Section Title -->
     <div class="text-center mb-12 sm:mb-16">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold relative inline-block pb-3 border-b-4 border-[#b01030]">
+        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold relative inline-block pb-3 border-b-4 border-[#b01030]"
+      >
         TECHNOLOGIES
       </h2>
       <p class="text-gray-600 mt-4 text-base sm:text-lg">
-        A Selection of Technologies I've Mastered and Utilized in My Web Development Projects
+        A Selection of Technologies I've Mastered and Utilized in My Web
+        Development Projects
       </p>
     </div>
 
     <!-- Technologies Grid (4x4 Layout) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-12 text-center">
-
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-12 text-center"
+    >
       <!-- Core Web Technologies -->
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+          alt="HTML5"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">HTML5</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+          alt="CSS3"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">CSS3</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-          alt="JavaScript" class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">JavaScript</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-          alt="TypeScript" class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+          alt="TypeScript"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">TypeScript</p>
       </div>
 
       <!-- Frameworks & Backend -->
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+          alt="Angular"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Angular</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          alt="Node.js"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Node.js</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+          alt="Express.js"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Express.js</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-          alt="Tailwind CSS" class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+          alt="Tailwind CSS"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Tailwind CSS</p>
       </div>
 
       <!-- Styling & Databases -->
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+          alt="Bootstrap"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Bootstrap</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS / SCSS"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+          alt="SASS / SCSS"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">SASS / SCSS</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+          alt="MongoDB"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">MongoDB</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-          alt="PostgreSQL" class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+          alt="PostgreSQL"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">PostgreSQL</p>
       </div>
 
       <!-- Databases & Backend Tools -->
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+          alt="MySQL"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">MySQL</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+          alt="Firebase"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Firebase</p>
       </div>
 
       <div class="group">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastify/fastify-original.svg" alt="Fastify"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastify/fastify-original.svg"
+          alt="Fastify"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Fastify</p>
       </div>
 
       <div class="group">
-        <img src="https://icon.icepanel.io/Technology/svg/Knex.js.svg" alt="Knex.js"
-          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110">
+        <img
+          src="https://icon.icepanel.io/Technology/svg/Knex.js.svg"
+          alt="Knex.js"
+          class="w-16 sm:w-20 mx-auto transition-transform duration-300 group-hover:scale-110"
+        />
         <p class="text-gray-700 mt-2 sm:mt-3">Knex.js</p>
       </div>
-
     </div>
-
   </div>
 </section>
 <!-- MY TECH -->
 <!-- MY TECH -->
 <!-- MY TECH -->
-  
 
-
-  <!-- CREDENTIALS -->
-  <!-- CREDENTIALS -->
-  <!-- CREDENTIALS -->
-<section id="credentials" class="relative bg-[#F8F8FF] text-black py-16 sm:py-24">
+<!-- CREDENTIALS -->
+<!-- CREDENTIALS -->
+<!-- CREDENTIALS -->
+<section
+  id="credentials"
+  class="relative bg-[#F8F8FF] text-black py-16 sm:py-24"
+>
   <div class="container mx-auto px-6 sm:px-12 lg:px-20">
-
     <!-- Section Title -->
     <div class="text-center mb-12 sm:mb-16">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]">
+        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]"
+      >
         CREDENTIALS
       </h2>
       <p class="text-gray-600 mt-4 text-base sm:text-lg">
-        Recognized Certifications Highlighting My Expertise in SEO, Digital Marketing, Networking, and Web Development.
+        Recognized Certifications Highlighting My Expertise in SEO, Digital
+        Marketing, Networking, and Web Development.
       </p>
     </div>
 
     <!-- Credentials Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-
       <!-- HubSpot Academy -->
       <div
-        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/HubSpot_Logo.png" class="h-8 sm:h-10 w-auto"
-            alt="HubSpot Logo">
+        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        <h3
+          class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/71/HubSpot_Logo.png"
+            class="h-8 sm:h-10 w-auto"
+            alt="HubSpot Logo"
+          />
           <span>HubSpot Academy</span>
         </h3>
         <div class="space-y-6">
           <div class="flex items-center space-x-4 sm:space-x-6 group">
-            <a href="https://app.hubspot.com/academy/achievements/wdmxjzv1/en/1/marcel-angelo-navarro/seo"
-              target="_blank" class="block group-hover:scale-110 transition-all duration-300">
+            <a
+              href="https://app.hubspot.com/academy/achievements/wdmxjzv1/en/1/marcel-angelo-navarro/seo"
+              target="_blank"
+              class="block group-hover:scale-110 transition-all duration-300"
+            >
               <img
                 src="https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/aef9d9f9f4fb4a85b43172d272639821.png"
-                class="h-20 sm:h-24 w-auto" alt="SEO Certification Badge">
+                class="h-20 sm:h-24 w-auto"
+                alt="SEO Certification Badge"
+              />
             </a>
             <div>
               <p class="text-lg font-semibold">SEO Certification</p>
-              <a href="https://app.hubspot.com/academy/achievements/wdmxjzv1/en/1/marcel-angelo-navarro/seo"
-                target="_blank" class="text-[#b01030] hover:underline text-sm">View Certificate →</a>
+              <a
+                href="https://app.hubspot.com/academy/achievements/wdmxjzv1/en/1/marcel-angelo-navarro/seo"
+                target="_blank"
+                class="text-[#b01030] hover:underline text-sm"
+                >View Certificate →</a
+              >
             </div>
           </div>
           <div class="flex items-center space-x-6 group">
-            <a href="https://app.hubspot.com/academy/achievements/c66lw9qj/en/1/marcel-angelo-navarro/seo-ii" target="_blank"
-              class="block group-hover:scale-110 transition-all duration-300">
-              <img src="https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/3956acae63634de79333bb759859d06c.png"
-                class="w-auto h-24" alt="HubSpot SEO II Certification Badge">
+            <a
+              href="https://app.hubspot.com/academy/achievements/c66lw9qj/en/1/marcel-angelo-navarro/seo-ii"
+              target="_blank"
+              class="block group-hover:scale-110 transition-all duration-300"
+            >
+              <img
+                src="https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/3956acae63634de79333bb759859d06c.png"
+                class="w-auto h-24"
+                alt="HubSpot SEO II Certification Badge"
+              />
             </a>
             <div>
               <p class="text-lg font-semibold">SEO II Certification</p>
-              <a href="https://app.hubspot.com/academy/achievements/c66lw9qj/en/1/marcel-angelo-navarro/seo-ii" target="_blank"
-                class="text-[#b01030] hover:underline text-sm">View Certificate →</a>
+              <a
+                href="https://app.hubspot.com/academy/achievements/c66lw9qj/en/1/marcel-angelo-navarro/seo-ii"
+                target="_blank"
+                class="text-[#b01030] hover:underline text-sm"
+                >View Certificate →</a
+              >
             </div>
           </div>
         </div>
@@ -552,156 +841,222 @@
 
       <!-- Google Skillshop -->
       <div
-        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" class="h-8 sm:h-10 w-auto"
-            alt="Google Logo">
+        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        <h3
+          class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+            class="h-8 sm:h-10 w-auto"
+            alt="Google Logo"
+          />
           <span>Google Skillshop</span>
         </h3>
         <ul class="space-y-4 text-base sm:text-lg">
-            <li>
-              <a href="https://skillshop.credential.net/ea983d80-c322-4f42-a6fc-6a88f48d75e1#acc.X85ZlxNe" target="_blank"
-                class="text-[#b01030] hover:underline flex items-center space-x-3">
-                <i class="fas fa-check-circle text-[#b01030]"></i>
-                <span>Google Analytics Certification</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://skillshop.credential.net/7562b732-ea64-4fa4-957f-1d15ad9af3c9#acc.F3Y74IHj" target="_blank"
-                class="text-[#b01030] hover:underline flex items-center space-x-3">
-                <i class="fas fa-check-circle text-[#b01030]"></i>
-                <span>GA4 Data and Reports Certification</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://skillshop.credential.net/9615d059-c3ff-4971-aa9a-073a7fe32690#acc.4FsIqVw5" target="_blank"
-                class="text-[#b01030] hover:underline flex items-center space-x-3">
-                <i class="fas fa-check-circle text-[#b01030]"></i>
-                <span>GA4 Getting Started Certification</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://skillshop.credential.net/308a82de-849c-490d-a7af-2fec3da05814#acc.Ibw6ta0d" target="_blank"
-                class="text-[#b01030] hover:underline flex items-center space-x-3">
-                <i class="fas fa-check-circle text-[#b01030]"></i>
-                <span>GA4 Data and Read Reports Certification</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://skillshop.credential.net/99b00768-c84b-4548-8643-1d4f32158676#acc.H5hLc34R" target="_blank"
-                class="text-[#b01030] hover:underline flex items-center space-x-3">
-                <i class="fas fa-check-circle text-[#b01030]"></i>
-                <span>GA4 Tools and Data Sources Certification</span>
-              </a>
-            </li>
-          </ul>
+          <li>
+            <a
+              href="https://skillshop.credential.net/ea983d80-c322-4f42-a6fc-6a88f48d75e1#acc.X85ZlxNe"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
+              <i class="fas fa-check-circle text-[#b01030]"></i>
+              <span>Google Analytics Certification</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skillshop.credential.net/7562b732-ea64-4fa4-957f-1d15ad9af3c9#acc.F3Y74IHj"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
+              <i class="fas fa-check-circle text-[#b01030]"></i>
+              <span>GA4 Data and Reports Certification</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skillshop.credential.net/9615d059-c3ff-4971-aa9a-073a7fe32690#acc.4FsIqVw5"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
+              <i class="fas fa-check-circle text-[#b01030]"></i>
+              <span>GA4 Getting Started Certification</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skillshop.credential.net/308a82de-849c-490d-a7af-2fec3da05814#acc.Ibw6ta0d"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
+              <i class="fas fa-check-circle text-[#b01030]"></i>
+              <span>GA4 Data and Read Reports Certification</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skillshop.credential.net/99b00768-c84b-4548-8643-1d4f32158676#acc.H5hLc34R"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
+              <i class="fas fa-check-circle text-[#b01030]"></i>
+              <span>GA4 Tools and Data Sources Certification</span>
+            </a>
+          </li>
+        </ul>
       </div>
 
       <!-- Cisco Networking Academy -->
       <div
-        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Cisco_Networking_Academy.svg"
-            class="h-8 sm:h-10 w-auto" alt="Cisco Logo">
+        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        <h3
+          class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/57/Cisco_Networking_Academy.svg"
+            class="h-8 sm:h-10 w-auto"
+            alt="Cisco Logo"
+          />
           <span>Cisco Networking Academy</span>
         </h3>
         <ul class="space-y-4 text-base sm:text-lg">
           <li>
-            <a href="/assets/files/networking.pdf" download="CCNA_ITN_MarcelAngeloNavarro.pdf"
-              class="text-[#b01030] hover:underline flex items-center space-x-3">
+            <a
+              href="/assets/files/networking.pdf"
+              download="CCNA_ITN_MarcelAngeloNavarro.pdf"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
               <i class="fas fa-download text-[#b01030]"></i>
               <span>CCNAv7: Introduction to Networks Certification</span>
             </a>
           </li>
           <li>
-            <a href="/assets/files/cybersecurity.pdf" download="CyberSecurityEssentials_MarcelAngeloNavarro.pdf"
-              class="text-[#b01030] hover:underline flex items-center space-x-3">
+            <a
+              href="/assets/files/cybersecurity.pdf"
+              download="CyberSecurityEssentials_MarcelAngeloNavarro.pdf"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
               <i class="fas fa-download text-[#b01030]"></i>
               <span>Cybersecurity Essentials Certification</span>
             </a>
+          </li>
         </ul>
       </div>
 
       <!-- FreeCodeCamp -->
       <div
-        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/FreeCodeCamp_logo.png"
-            class="h-8 sm:h-10 w-auto" alt="FreeCodeCamp Logo">
+        class="bg-white shadow-lg rounded-xl p-6 sm:p-10 border-l-4 border-[#b01030] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+      >
+        <h3
+          class="text-xl sm:text-2xl font-[Poppins] font-semibold mb-6 flex items-center space-x-3"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/39/FreeCodeCamp_logo.png"
+            class="h-8 sm:h-10 w-auto"
+            alt="FreeCodeCamp Logo"
+          />
           <span>FreeCodeCamp</span>
         </h3>
         <ul class="space-y-4 text-base sm:text-lg">
           <li>
-            <a href="https://www.freecodecamp.org/certification/averagedevguy/responsive-web-design" target="_blank"
-              class="text-[#b01030] hover:underline flex items-center space-x-3">
+            <a
+              href="https://www.freecodecamp.org/certification/averagedevguy/responsive-web-design"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
               <i class="fas fa-check-circle text-[#b01030]"></i>
               <span>Responsive Web Design Certification</span>
             </a>
           </li>
           <li>
-            <a href="https://www.freecodecamp.org/certification/averagedevguy/javascript-algorithms-and-data-structures"
-              target="_blank" class="text-[#b01030] hover:underline flex items-center space-x-3">
+            <a
+              href="https://www.freecodecamp.org/certification/averagedevguy/javascript-algorithms-and-data-structures"
+              target="_blank"
+              class="text-[#b01030] hover:underline flex items-center space-x-3"
+            >
               <i class="fas fa-check-circle text-[#b01030]"></i>
               <span>JavaScript Algorithms & Data Structures</span>
             </a>
           </li>
         </ul>
       </div>
-
     </div>
-
   </div>
 </section>
-  <!-- CREDENTIALS -->
-  <!-- CREDENTIALS -->
-  <!-- CREDENTIALS -->
-
-
-
-
+<!-- CREDENTIALS -->
+<!-- CREDENTIALS -->
+<!-- CREDENTIALS -->
 
 <!-- CONTACT -->
 <!-- CONTACT -->
 <!-- CONTACT -->
 <section id="contact" class="relative bg-[#F8F8FF] text-black py-16 sm:py-24">
   <div class="container mx-auto px-6 sm:px-12 lg:px-20">
-
     <!-- Section Title -->
     <div class="text-center mb-12 sm:mb-16">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]">
+        class="text-3xl sm:text-4xl md:text-5xl font-[Poppins] font-bold uppercase relative inline-block pb-3 border-b-4 border-[#b01030]"
+      >
         CONTACT
       </h2>
       <p class="text-gray-600 mt-4 text-base sm:text-lg">
-        Have A Project In Mind? Let's Build Something Awesome Together!
-        I’d Love To Collaborate And Create Innovative Solutions.
+        Have A Project In Mind? Let's Build Something Awesome Together! I’d Love
+        To Collaborate And Create Innovative Solutions.
       </p>
     </div>
 
     <!-- Contact Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 items-center">
-
       <!-- Contact Form -->
-      <div class="bg-white p-8 sm:p-10 rounded-xl shadow-lg transition-all duration-500 hover:shadow-[#b01030]">
-        <h3 class="text-2xl sm:text-3xl font-[Poppins] font-semibold text-[#b01030] mb-6">Send a Message</h3>
-        <form action="https://formspree.io/f/xwpvnrpp" method="POST" class="space-y-6">
+      <div
+        class="bg-white p-8 sm:p-10 rounded-xl shadow-lg transition-all duration-500 hover:shadow-[#b01030]"
+      >
+        <h3
+          class="text-2xl sm:text-3xl font-[Poppins] font-semibold text-[#b01030] mb-6"
+        >
+          Send a Message
+        </h3>
+        <form
+          action="https://formspree.io/f/xwpvnrpp"
+          method="POST"
+          class="space-y-6"
+        >
           <div class="relative">
-            <input type="text" id="name" name="name" required
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
               class="peer bg-transparent border-b-2 border-gray-500 text-black w-full py-3 focus:border-[#b01030] outline-none transition-all duration-300"
-              placeholder="Name">
+              placeholder="Name"
+            />
           </div>
           <div class="relative">
-            <input type="email" id="email" name="email" required
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
               class="peer bg-transparent border-b-2 border-gray-500 text-black w-full py-3 focus:border-[#b01030] outline-none transition-all duration-300"
-              placeholder="Email">
+              placeholder="Email"
+            />
           </div>
           <div class="relative">
-            <textarea id="message" name="message" rows="4" required
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
               class="peer bg-transparent border-b-2 border-gray-500 text-black w-full py-3 focus:border-[#b01030] outline-none transition-all duration-300 resize-none"
-              placeholder="Message"></textarea>
+              placeholder="Message"
+            ></textarea>
           </div>
-          <button type="submit"
-            class="w-full bg-[#313332] text-white text-lg font-[Poppins] py-3 rounded-lg shadow-lg hover:bg-[#b01030] transition-all duration-300">
+          <button
+            type="submit"
+            class="w-full bg-[#313332] text-white text-lg font-[Poppins] py-3 rounded-lg shadow-lg hover:bg-[#b01030] transition-all duration-300"
+          >
             Send Message
           </button>
         </form>
@@ -710,59 +1065,91 @@
       <!-- Contact Information -->
       <div class="relative text-center md:text-right w-full">
         <div class="flex justify-center md:justify-end">
-          <img src="/assets/images/contact.png" alt="Marcel Angelo"
-            class="w-64 sm:w-80 h-auto object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105">
+          <img
+            src="/assets/images/contact.png"
+            alt="Marcel Angelo"
+            class="w-64 sm:w-80 h-auto object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+          />
         </div>
         <div class="mt-8 text-center md:text-right">
-          <h3 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">Marcel Angelo Navarro</h3>
+          <h3 class="text-2xl sm:text-3xl font-[Poppins] font-semibold">
+            Marcel Angelo Navarro
+          </h3>
           <div class="mt-6 space-y-3 text-base sm:text-lg">
-
             <!-- Location -->
-            <div class="flex items-center justify-center md:justify-end space-x-3">
+            <div
+              class="flex items-center justify-center md:justify-end space-x-3"
+            >
               <i class="fas fa-map-marker-alt text-[#b01030] text-xl"></i>
               <p>Angeles City / Tarlac City, Philippines</p>
             </div>
 
             <!-- Email -->
-            <div class="flex items-center justify-center md:justify-end space-x-3">
+            <div
+              class="flex items-center justify-center md:justify-end space-x-3"
+            >
               <i class="fas fa-envelope text-[#b01030] text-xl"></i>
-              <p><a href="mailto:marcelxangelo&#64;gmail.com" class="hover:underline"
-                  target="_blank">marcelxangelo&#64;gmail.com</a></p>
+              <p>
+                <a
+                  href="mailto:marcelxangelo&#64;gmail.com"
+                  class="hover:underline"
+                  target="_blank"
+                  >marcelxangelo&#64;gmail.com</a
+                >
+              </p>
             </div>
 
             <!-- Phone -->
-            <div class="flex items-center justify-center md:justify-end space-x-3">
+            <div
+              class="flex items-center justify-center md:justify-end space-x-3"
+            >
               <i class="fas fa-phone text-[#b01030] text-xl"></i>
-              <p><a href="tel:+639123456789" class="hover:underline">+63 960 333 0028</a></p>
+              <p>
+                <a href="tel:+639123456789" class="hover:underline"
+                  >+63 960 333 0028</a
+                >
+              </p>
             </div>
           </div>
 
           <!-- Social Media Links -->
           <div class="mt-8 flex justify-center md:justify-end space-x-6">
-            <a href="https://www.linkedin.com/in/marcelanghelo/" target="_blank"
-              class="hover:opacity-80 transition-all duration-300">
+            <a
+              href="https://www.linkedin.com/in/marcelanghelo/"
+              target="_blank"
+              class="hover:opacity-80 transition-all duration-300"
+            >
               <svg class="w-8 h-8 fill-[#0077b5]" viewBox="0 0 24 24">
                 <path
-                  d="M22.23 0H1.77C.8 0 0 .8 0 1.77v20.45C0 23.2.8 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.77V1.77C24 .8 23.2 0 22.23 0zM7.08 20.45H3.56V8.95h3.52v11.5zM5.32 7.43c-1.13 0-1.82-.75-1.82-1.68 0-.94.7-1.68 1.83-1.68 1.12 0 1.82.74 1.82 1.68 0 .94-.7 1.68-1.83 1.68zM20.45 20.45h-3.52v-5.6c0-1.35-.5-2.26-1.74-2.26-1.01 0-1.61.68-1.88 1.35-.1.24-.12.58-.12.92v5.58h-3.52s.05-9.03 0-9.95h3.52v1.41c.46-.71 1.27-1.72 3.08-1.72 2.25 0 3.94 1.46 3.94 4.6v5.65z" />
+                  d="M22.23 0H1.77C.8 0 0 .8 0 1.77v20.45C0 23.2.8 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.77V1.77C24 .8 23.2 0 22.23 0zM7.08 20.45H3.56V8.95h3.52v11.5zM5.32 7.43c-1.13 0-1.82-.75-1.82-1.68 0-.94.7-1.68 1.83-1.68 1.12 0 1.82.74 1.82 1.68 0 .94-.7 1.68-1.83 1.68zM20.45 20.45h-3.52v-5.6c0-1.35-.5-2.26-1.74-2.26-1.01 0-1.61.68-1.88 1.35-.1.24-.12.58-.12.92v5.58h-3.52s.05-9.03 0-9.95h3.52v1.41c.46-.71 1.27-1.72 3.08-1.72 2.25 0 3.94 1.46 3.94 4.6v5.65z"
+                />
               </svg>
             </a>
-            <a href="https://github.com/navarroangelo" target="_blank" class="hover:opacity-80 transition-all duration-300">
+            <a
+              href="https://github.com/navarroangelo"
+              target="_blank"
+              class="hover:opacity-80 transition-all duration-300"
+            >
               <svg class="w-8 h-8 fill-[#171515]" viewBox="0 0 24 24">
                 <path
-                  d="M12 0C5.37 0 0 5.4 0 12.08c0 5.34 3.44 9.87 8.21 11.49.6.11.82-.26.82-.58v-2.12c-3.34.73-4.03-1.6-4.03-1.6-.54-1.41-1.32-1.79-1.32-1.79-1.08-.75.08-.73.08-.73 1.2.08 1.83 1.27 1.83 1.27 1.07 1.85 2.82 1.31 3.52 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.48-1.36-5.48-6.05 0-1.34.47-2.44 1.24-3.3-.12-.31-.54-1.54.12-3.2 0 0 1.01-.33 3.3 1.26A11.8 11.8 0 0112 6.2c1.02.01 2.05.14 3.02.41 2.28-1.6 3.29-1.26 3.29-1.26.67 1.66.25 2.89.12 3.2.77.86 1.23 1.96 1.23 3.3 0 4.7-2.81 5.75-5.49 6.04.43.38.81 1.13.81 2.28v3.38c0 .32.22.7.83.58A12.04 12.04 0 0024 12.08C24 5.4 18.63 0 12 0z" />
+                  d="M12 0C5.37 0 0 5.4 0 12.08c0 5.34 3.44 9.87 8.21 11.49.6.11.82-.26.82-.58v-2.12c-3.34.73-4.03-1.6-4.03-1.6-.54-1.41-1.32-1.79-1.32-1.79-1.08-.75.08-.73.08-.73 1.2.08 1.83 1.27 1.83 1.27 1.07 1.85 2.82 1.31 3.52 1 .11-.77.42-1.3.76-1.6-2.67-.3-5.48-1.36-5.48-6.05 0-1.34.47-2.44 1.24-3.3-.12-.31-.54-1.54.12-3.2 0 0 1.01-.33 3.3 1.26A11.8 11.8 0 0112 6.2c1.02.01 2.05.14 3.02.41 2.28-1.6 3.29-1.26 3.29-1.26.67 1.66.25 2.89.12 3.2.77.86 1.23 1.96 1.23 3.3 0 4.7-2.81 5.75-5.49 6.04.43.38.81 1.13.81 2.28v3.38c0 .32.22.7.83.58A12.04 12.04 0 0024 12.08C24 5.4 18.63 0 12 0z"
+                />
               </svg>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61567072834431" target="_blank"
-              class="hover:opacity-80 transition-all duration-300">
+            <a
+              href="https://www.facebook.com/profile.php?id=61567072834431"
+              target="_blank"
+              class="hover:opacity-80 transition-all duration-300"
+            >
               <svg class="w-8 h-8 fill-[#1877F2]" viewBox="0 0 24 24">
                 <path
-                  d="M22 12.08C22 6.5 17.5 2 12 2S2 6.5 2 12.08C2 17.1 5.84 21.2 10.67 22v-7h-3v-3h3v-2.3c0-3 1.7-4.5 4.3-4.5 1.24 0 2.53.23 2.53.23v2.75h-1.43c-1.4 0-1.83.86-1.83 1.74V12h3.1l-.5 3h-2.6v7C18.16 21.2 22 17.1 22 12.08z" />
+                  d="M22 12.08C22 6.5 17.5 2 12 2S2 6.5 2 12.08C2 17.1 5.84 21.2 10.67 22v-7h-3v-3h3v-2.3c0-3 1.7-4.5 4.3-4.5 1.24 0 2.53.23 2.53.23v2.75h-1.43c-1.4 0-1.83.86-1.83 1.74V12h3.1l-.5 3h-2.6v7C18.16 21.2 22 17.1 22 12.08z"
+                />
               </svg>
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -770,26 +1157,28 @@
 <!-- CONTACT -->
 <!-- CONTACT -->
 
-
-
-
-
 <!-- FOOTER SECTION -->
 <!-- FOOTER SECTION -->
 <!-- FOOTER SECTION -->
 <footer class="bg-[#F8F8FF] text-black font-[Inter] py-8 sm:py-12 mt-auto">
-  <div class="container mx-auto flex flex-col items-center text-center px-6 sm:px-12">
-
+  <div
+    class="container mx-auto flex flex-col items-center text-center px-6 sm:px-12"
+  >
     <!-- Logo with Hover Effect -->
     <a href="#top" class="transition-transform duration-300 hover:scale-105">
-      <img src="/assets/images/logo.png" alt="Logo" class="h-16 sm:h-20 w-auto object-contain">
+      <img
+        src="/assets/images/logo.png"
+        alt="Logo"
+        class="h-16 sm:h-20 w-auto object-contain"
+      />
     </a>
 
     <!-- Copyright Text -->
-    <p class="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-6 tracking-wider uppercase font-[Poppins]">
+    <p
+      class="text-xs sm:text-sm text-gray-400 mt-4 sm:mt-6 tracking-wider uppercase font-[Poppins]"
+    >
       &copy; 2025 MARCELANGELO.DEV | All Rights Reserved.
     </p>
-
   </div>
 </footer>
 <!-- FOOTER SECTION -->
