@@ -59,9 +59,7 @@
   text-align: center;
   opacity: 0;
   transform: translateY(10px);
-  transition:
-    opacity 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .hover-card:hover .hover-card-front {
@@ -198,11 +196,9 @@
     transform: rotateY(180deg);
   }
 }
-
 .flip-card.active .flip-card-inner {
   transform: rotateY(180deg);
 }
-
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -237,7 +233,7 @@
 }
 
 .flip-card-back img {
-  filter: brightness(200%);
+  filter: brightness(105%);
 }
 /* END OF FLIP CARDS */
 /* END OF FLIP CARDS */
