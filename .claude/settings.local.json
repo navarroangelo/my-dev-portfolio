@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for file in networking.pdf cybersecurity.pdf resume-updated-06052025.pdf)",
+      "Bash(do [ -f \"public/assets/files/$file\" ])",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(for file in aloq.webp rannieoll.webp josephesq.webp jeankysal.webp)",
+      "Bash(do [ -f \"public/assets/images/$file\" ])"
+    ]
+  }
+}

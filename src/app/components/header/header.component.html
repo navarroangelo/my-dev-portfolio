@@ -1,21 +1,24 @@
 <!-- HEADER -->
-<!-- HEADER -->
-<!-- HEADER -->
 <header
   id="top"
-  class="bg-[#F8F8FF] text-black font-[Inter] pt-4 top-0 z-50 w-full shadow-md"
+  class="bg-background text-black font-inter sticky top-0 z-50 w-full shadow-md"
+  role="banner"
 >
-  <nav>
+  <nav aria-label="Main navigation">
     <div
       class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-20"
     >
       <!-- LOGO -->
-      <div class="text-2xl font-bold font-[Poppins]">
-        <a href="#top">
+      <div class="text-2xl font-bold font-poppins">
+        <a
+          href="#top"
+          aria-label="Go to top of page"
+          class="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-lg"
+        >
           <img
             src="/assets/images/logo.svg"
-            alt="Logo"
-            class="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+            alt="MarcelAngelo.Dev Logo"
+            class="h-12 w-12 sm:h-16 sm:w-16 object-contain transition-transform duration-300 hover:scale-110"
           />
         </a>
       </div>
@@ -23,65 +26,106 @@
       <!-- MOBILE MENU BUTTON -->
       <button
         (click)="toggleMenu()"
-        class="md:hidden text-black focus:outline-none"
+        class="md:hidden text-black p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors hover:bg-gray-100"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
       >
         <svg
-          class="w-8 h-8"
+          class="w-7 h-7 transition-transform duration-300"
+          [class.rotate-90]="menuOpen"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
+          @if (!menuOpen) {
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          } @else {
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          }
         </svg>
       </button>
 
       <!-- NAVIGATION MENU -->
       <div
+        id="mobile-menu"
         [class.hidden]="!menuOpen"
-        class="md:flex md:items-center md:space-x-6 lg:space-x-10 font-[Poppins] absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-[#F8F8FF] md:bg-transparent md:transform-none md:flex-row text-center md:text-left shadow-lg md:shadow-none transition-all"
+        class="md:flex md:items-center md:space-x-6 lg:space-x-10 font-poppins fixed md:relative top-[72px] md:top-0 left-0 w-full md:w-auto h-[calc(100vh-72px)] md:h-auto bg-background md:bg-transparent md:transform-none flex flex-col md:flex-row justify-start md:justify-start items-center text-center md:text-left md:shadow-none z-40 pt-12 md:pt-0 gap-2 md:gap-0 overflow-y-auto"
+        role="menubar"
       >
         <a
           href="#home"
-          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          class="nav-link text-black hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 block w-full md:w-auto py-4 px-8 md:py-2 md:px-3 md:rounded-lg relative overflow-hidden group text-xl md:text-base font-medium md:font-normal tracking-wide md:tracking-normal hover:bg-gray-100 md:hover:bg-transparent"
           (click)="closeMenu()"
-          >Home</a
+          role="menuitem"
         >
+          <span class="relative z-10">Home</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left md:hidden"></span>
+        </a>
         <a
           href="#portfolio"
-          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          class="nav-link text-black hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 block w-full md:w-auto py-4 px-8 md:py-2 md:px-3 md:rounded-lg relative overflow-hidden group text-xl md:text-base font-medium md:font-normal tracking-wide md:tracking-normal hover:bg-gray-100 md:hover:bg-transparent"
           (click)="closeMenu()"
-          >Portfolio</a
+          role="menuitem"
         >
+          <span class="relative z-10">Portfolio</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left md:hidden"></span>
+        </a>
         <a
           href="#about"
-          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          class="nav-link text-black hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 block w-full md:w-auto py-4 px-8 md:py-2 md:px-3 md:rounded-lg relative overflow-hidden group text-xl md:text-base font-medium md:font-normal tracking-wide md:tracking-normal hover:bg-gray-100 md:hover:bg-transparent"
           (click)="closeMenu()"
-          >About</a
+          role="menuitem"
         >
+          <span class="relative z-10">About</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left md:hidden"></span>
+        </a>
         <a
           href="#technologies"
-          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          class="nav-link text-black hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 block w-full md:w-auto py-4 px-8 md:py-2 md:px-3 md:rounded-lg relative overflow-hidden group text-xl md:text-base font-medium md:font-normal tracking-wide md:tracking-normal hover:bg-gray-100 md:hover:bg-transparent"
           (click)="closeMenu()"
-          >Technologies</a
+          role="menuitem"
         >
+          <span class="relative z-10">Technologies</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left md:hidden"></span>
+        </a>
         <a
           href="#credentials"
-          class="nav-link text-black hover:text-[#b01030] transition-all block py-3 px-6 md:py-0 md:px-0"
+          class="nav-link text-black hover:text-primary focus:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-300 block w-full md:w-auto py-4 px-8 md:py-2 md:px-3 md:rounded-lg relative overflow-hidden group text-xl md:text-base font-medium md:font-normal tracking-wide md:tracking-normal hover:bg-gray-100 md:hover:bg-transparent"
           (click)="closeMenu()"
-          >Credentials</a
+          role="menuitem"
         >
+          <span class="relative z-10">Credentials</span>
+          <span class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left md:hidden"></span>
+        </a>
+
+        <!-- MOBILE CONTACT BUTTON -->
+        <a
+          href="#contact"
+          class="md:hidden bg-gradient-to-r from-primary to-secondary text-white py-4 px-10 mt-6 rounded-full hover:shadow-xl hover:scale-105 font-poppins transition-all duration-300 inline-block text-lg font-semibold tracking-wide uppercase shadow-lg"
+          (click)="closeMenu()"
+          role="menuitem"
+        >Contact Me</a>
+
+        <!-- DECORATIVE ELEMENT -->
+        <div class="md:hidden w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-8 opacity-30"></div>
       </div>
 
       <!-- CONTACT CTA BUTTON -->
       <div class="hidden md:block">
         <a
           href="#contact"
-          class="bg-[#b01030] text-white py-3 px-6 rounded-lg hover:bg-[#313332] font-[Poppins] transition-all duration-300"
+          class="bg-primary text-white py-2 px-3 md:py-2 md:px-4 lg:py-3 lg:px-6 rounded-lg hover:bg-secondary hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 font-poppins transition-all duration-300 transform hover:-translate-y-0.5 text-xs md:text-sm lg:text-base whitespace-nowrap"
         >
           Contact Me
         </a>
@@ -89,6 +133,3 @@
     </div>
   </nav>
 </header>
-<!-- HEADER -->
-<!-- HEADER -->
-<!-- HEADER -->

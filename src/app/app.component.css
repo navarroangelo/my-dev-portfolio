@@ -11,7 +11,8 @@
 .hover-card {
   position: relative;
   width: 100%;
-  height: 90%;
+  height: 100%;
+  min-height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,15 +63,6 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.hover-card:hover .hover-card-front {
-  opacity: 0;
-}
-
-.hover-card:hover .hover-card-back {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .hover-card img {
   width: 3rem;
   height: 3rem;
@@ -81,7 +73,7 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .hover-card {
     height: 10rem;
   }
@@ -109,29 +101,17 @@
   }
 }
 
-@media (hover: hover) {
-  .hover-card:hover .hover-card-front {
-    opacity: 0;
-  }
-
-  .hover-card:hover .hover-card-back {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Show hover cards on all devices */
+.hover-card:hover .hover-card-front,
+.hover-card.active .hover-card-front {
+  opacity: 0;
 }
 
-@media (hover: none) {
-  .hover-card.active .hover-card-front {
-    opacity: 0;
-  }
-
-  .hover-card.active .hover-card-back {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hover-card:hover .hover-card-back,
+.hover-card.active .hover-card-back {
+  opacity: 1;
+  transform: translateY(0);
 }
-/* END OF HOVER CARDS */
-/* END OF HOVER CARDS */
 /* END OF HOVER CARDS */
 
 /* START OF FLIP CARDS */
@@ -191,6 +171,20 @@
   cursor: pointer;
 }
 
+@media (min-width: 640px) {
+  .flip-card {
+    width: calc(50% - 0.75rem);
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flip-card {
+    width: calc(33.333% - 1.333rem);
+    max-width: 320px;
+  }
+}
+
 @media (hover: hover) {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
@@ -240,19 +234,37 @@
 /* END OF FLIP CARDS */
 
 /* START OF TESTIMONIAL CARDS */
-/* START OF TESTIMONIAL CARDS */
-/* START OF TESTIMONIAL CARDS */
 .testimonial-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .testimonial-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
 }
 
 .testimonial-card.alternate {
@@ -260,37 +272,90 @@
 }
 
 .testimonial-image {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  border: 4px solid #313332;
+  border: 3px solid #313332;
   transition: border-color 0.4s ease-in-out;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .testimonial-image {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-width: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-image {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .testimonial-name {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #b01030;
   transition: color 0.4s ease-in-out;
 }
 
+@media (min-width: 640px) {
+  .testimonial-name {
+    font-size: 1.125rem;
+  }
+}
+
 .testimonial-role {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #777;
   transition: color 0.4s ease-in-out;
 }
 
+@media (min-width: 640px) {
+  .testimonial-role {
+    font-size: 0.875rem;
+  }
+}
+
 .testimonial-text {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #444;
   margin-top: 0.5rem;
   transition: color 0.4s ease-in-out;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .testimonial-text {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-text {
+    font-size: 0.875rem;
+  }
 }
 
 .testimonial-card:hover {
   background: linear-gradient(to right, #b01030, #313332);
-  transform: scale(1.05);
+  transform: scale(1.02);
   color: white;
+}
+
+@media (min-width: 640px) {
+  .testimonial-card:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card:hover {
+    transform: scale(1.05);
+  }
 }
 
 .testimonial-card.alternate:hover {
@@ -307,21 +372,10 @@
   color: white;
 }
 
-.testimonial-card {
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.testimonial-card:hover {
-  background: linear-gradient(to right, #b01030, #313332);
-  transform: scale(1.05);
-  color: white;
-}
-
 @media (hover: none) {
   .testimonial-card.active {
     background: linear-gradient(to right, #b01030, #313332);
-    transform: scale(1.05);
+    transform: scale(1.02);
     color: white;
   }
 
@@ -335,6 +389,4 @@
     color: white;
   }
 }
-/* END OF TESTIMONIAL CARDS */
-/* END OF TESTIMONIAL CARDS */
 /* END OF TESTIMONIAL CARDS */
